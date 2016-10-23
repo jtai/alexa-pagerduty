@@ -1,5 +1,11 @@
 # alexa-pagerduty
-Unofficial PagerDuty Alexa skill that uses the PagerDuty calendar feed
+Unofficial PagerDuty Alexa skill that uses the PagerDuty calendar feed to answer questions about current and future on call:
+
+> Alexa, ask PagerDuty if I am on call.
+
+> Alexa, ask PagerDuty when my on call ends.
+
+> Alexa, ask PagerDuty when does my next on call start.
 
 _Disclaimer: I am not affiliated with PagerDuty in any way._
 
