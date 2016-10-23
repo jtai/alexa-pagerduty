@@ -1,0 +1,17 @@
+{
+  "name": "pagerduty",
+  "version": "0.1.0",
+  "main": "index.js",
+  "alexa": {
+    "applicationId": "amzn1.ask.skill.uuid"
+  },
+  "pagerduty": {
+    "url": "https://yourorg.pagerduty.com/private/secretid/feed"
+  },
+  "dependencies": {
+    "alexa-app": "^2.3.4",
+    "moment": "^2.15.1",
+    "moment-timezone": "^0.5.7",
+    "humanize-list": "^1.0.1"
+  }
+}

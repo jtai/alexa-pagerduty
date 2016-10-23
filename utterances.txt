@@ -1,0 +1,84 @@
+IsOnCallIntent	if I am on call
+IsOnCallIntent	if I am currently on call
+IsOnCallIntent	if I am on call right now
+IsOnCallIntent	am I on call
+IsOnCallIntent	am I currently on call
+IsOnCallIntent	am I on call right now
+ActiveSchedulesIntent	what am I on call for
+ActiveSchedulesIntent	what rotation am I on call for
+ActiveSchedulesIntent	what rotations am I on call for
+ActiveSchedulesIntent	what schedule am I on call for
+ActiveSchedulesIntent	what schedules am I on call for
+ActiveSchedulesIntent	what policy am I on call for
+ActiveSchedulesIntent	what policies am I on call for
+ActiveSchedulesIntent	what am I currently on call for
+ActiveSchedulesIntent	what rotation am I currently on call for
+ActiveSchedulesIntent	what rotations am I currently on call for
+ActiveSchedulesIntent	what schedule am I currently on call for
+ActiveSchedulesIntent	what schedules am I currently on call for
+ActiveSchedulesIntent	what policy am I currently on call for
+ActiveSchedulesIntent	what policies am I currently on call for
+ActiveSchedulesIntent	what am I on call for right now
+ActiveSchedulesIntent	what rotation am I on call for right now
+ActiveSchedulesIntent	what rotations am I on call for right now
+ActiveSchedulesIntent	what schedule am I on call for right now
+ActiveSchedulesIntent	what schedules am I on call for right now
+ActiveSchedulesIntent	what policy am I on call for right now
+ActiveSchedulesIntent	what policies am I on call for right now
+ActiveSchedulesIntent	when my on call ends
+ActiveSchedulesIntent	when my current on call ends
+ActiveSchedulesIntent	when my on call rotation ends
+ActiveSchedulesIntent	when my current on call rotation ends
+ActiveSchedulesIntent	when my on call schedule ends
+ActiveSchedulesIntent	when my current on call schedule ends
+ActiveSchedulesIntent	when my on call policy ends
+ActiveSchedulesIntent	when my current on call policy ends
+ActiveSchedulesIntent	when does my on call end
+ActiveSchedulesIntent	when does my current on call end
+ActiveSchedulesIntent	when does my on call rotation end
+ActiveSchedulesIntent	when does my current on call rotation end
+ActiveSchedulesIntent	when does my on call schedule end
+ActiveSchedulesIntent	when does my current on call schedule end
+ActiveSchedulesIntent	when does my on call policy end
+ActiveSchedulesIntent	when does my current on call policy end
+ActiveSchedulesIntent	when is my on call over
+ActiveSchedulesIntent	when is my current on call over
+ActiveSchedulesIntent	when is my on call rotation over
+ActiveSchedulesIntent	when is my current on call rotation over
+ActiveSchedulesIntent	when is my on call schedule over
+ActiveSchedulesIntent	when is my current on call schedule over
+ActiveSchedulesIntent	when is my on call policy over
+ActiveSchedulesIntent	when is my current on call policy over
+NextSchedulesIntent	what am I on call for next
+NextSchedulesIntent	what rotation am I on call for next
+NextSchedulesIntent	what rotations am I on call for next
+NextSchedulesIntent	what schedule am I on call for next
+NextSchedulesIntent	what schedules am I on call for next
+NextSchedulesIntent	what policy am I on call for next
+NextSchedulesIntent	what policies am I on call for next
+NextSchedulesIntent	when does my on call start
+NextSchedulesIntent	when does my next on call start
+NextSchedulesIntent	when does my on call rotation start
+NextSchedulesIntent	when does my next on call rotation start
+NextSchedulesIntent	when does my on call schedule start
+NextSchedulesIntent	when does my next on call schedule start
+NextSchedulesIntent	when does my on call policy start
+NextSchedulesIntent	when does my next on call policy start
+NextSchedulesIntent	when does my on call begin
+NextSchedulesIntent	when does my next on call begin
+NextSchedulesIntent	when does my on call rotation begin
+NextSchedulesIntent	when does my next on call rotation begin
+NextSchedulesIntent	when does my on call schedule begin
+NextSchedulesIntent	when does my next on call schedule begin
+NextSchedulesIntent	when does my on call policy begin
+NextSchedulesIntent	when does my next on call policy begin
+NextSchedulesIntent	when is my on call
+NextSchedulesIntent	when is my next on call
+NextSchedulesIntent	when is my on call rotation
+NextSchedulesIntent	when is my next on call rotation
+NextSchedulesIntent	when is my on call schedule
+NextSchedulesIntent	when is my next on call schedule
+NextSchedulesIntent	when is my on call policy
+NextSchedulesIntent	when is my next on call policy
+NextSchedulesIntent	when am I next on call
+NextSchedulesIntent	when am I on call next
