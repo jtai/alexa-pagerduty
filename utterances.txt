@@ -56,29 +56,25 @@ NextSchedulesIntent	what schedule am I on call for next
 NextSchedulesIntent	what schedules am I on call for next
 NextSchedulesIntent	what policy am I on call for next
 NextSchedulesIntent	what policies am I on call for next
-NextSchedulesIntent	when does my on call start
+NextSchedulesIntent	when my next on call starts
+NextSchedulesIntent	when my next on call rotation starts
+NextSchedulesIntent	when my next on call schedule starts
+NextSchedulesIntent	when my next on call policy starts
+NextSchedulesIntent	when my next on call begins
+NextSchedulesIntent	when my next on call rotation begins
+NextSchedulesIntent	when my next on call schedule begins
+NextSchedulesIntent	when my next on call policy begins
 NextSchedulesIntent	when does my next on call start
-NextSchedulesIntent	when does my on call rotation start
 NextSchedulesIntent	when does my next on call rotation start
-NextSchedulesIntent	when does my on call schedule start
 NextSchedulesIntent	when does my next on call schedule start
-NextSchedulesIntent	when does my on call policy start
 NextSchedulesIntent	when does my next on call policy start
-NextSchedulesIntent	when does my on call begin
 NextSchedulesIntent	when does my next on call begin
-NextSchedulesIntent	when does my on call rotation begin
 NextSchedulesIntent	when does my next on call rotation begin
-NextSchedulesIntent	when does my on call schedule begin
 NextSchedulesIntent	when does my next on call schedule begin
-NextSchedulesIntent	when does my on call policy begin
 NextSchedulesIntent	when does my next on call policy begin
-NextSchedulesIntent	when is my on call
 NextSchedulesIntent	when is my next on call
-NextSchedulesIntent	when is my on call rotation
 NextSchedulesIntent	when is my next on call rotation
-NextSchedulesIntent	when is my on call schedule
 NextSchedulesIntent	when is my next on call schedule
-NextSchedulesIntent	when is my on call policy
 NextSchedulesIntent	when is my next on call policy
 NextSchedulesIntent	when am I next on call
 NextSchedulesIntent	when am I on call next

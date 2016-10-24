@@ -207,8 +207,9 @@ app.intent('ActiveSchedulesIntent', {
 app.intent('NextSchedulesIntent', {
   utterances: [
     "what {|rotation |rotations |schedule |schedules |policy |policies }am I on call for next",
-    "when does my {|next }on call {|rotation |schedule |policy }{start|begin}",
-    "when is my {|next }on call {|rotation |schedule |policy }",
+    "when my next on call {|rotation |schedule |policy }{starts|begins}",
+    "when does my next on call {|rotation |schedule |policy }{start|begin}",
+    "when is my next on call {|rotation |schedule |policy }",
     "when am I next on call",
     "when am I on call next",
   ]
