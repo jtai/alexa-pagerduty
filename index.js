@@ -2,29 +2,36 @@ var alexa = require('alexa-app');
 var https = require('https');
 var moment = require('moment-timezone');
 var humanizeList = require('humanize-list');
+var Q = require('q');
 var package_json = require('./package.json');
 
 // Allow this module to be reloaded by hotswap when changed
 module.change_code = 1;
 
-var getSchedules = function(success, error) {
-  getCalendarFeed(function(data) {
+var getSchedules = function() {
+  var deferred = Q.defer();
+
+  getCalendarFeed().then(function(data) {
     var timezone = parseCalendarFeedTimezone(data);
     var events = parseCalendarFeedEvents(data);
     var now = moment();
     var activeSchedules = getActiveSchedules(events, now);
     var nextSchedules = getNextSchedules(events, now);
 
-    success({
+    deferred.resolve({
       timezone: timezone,
       now: now,
       activeSchedules: activeSchedules,
       nextSchedules: nextSchedules
     });
-  }, error);
+  }, deferred.reject);
+
+  return deferred.promise;
 };
 
-var getCalendarFeed = function(success, error) {
+var getCalendarFeed = function() {
+  var deferred = Q.defer();
+
   https.get(package_json.pagerduty.url, function(response) {
     if (response.statusCode == 200) {
       var body = '';
@@ -32,14 +39,16 @@ var getCalendarFeed = function(success, error) {
         body += data;
       });
       response.on('end', function() {
-        success(body);
+        deferred.resolve(body);
       });
     } else {
-      error(response);
+      deferred.reject(response);
     }
   }).on('error', function(e) {
-    error(e);
+    deferred.reject(e);
   });
+
+  return deferred.promise;
 };
 
 var parseCalendarFeedTimezone = function(data) {
@@ -140,13 +149,7 @@ var humanizeTime = function(time, timezone, now) {
 };
 
 var app = new alexa.app('pagerduty');
-
-app.pre = function(request,response,type) {
-  if (request.sessionDetails.application.applicationId != package_json.alexa.applicationId) {
-    // Fail ungracefully
-    response.fail("Invalid applicationId");
-  }
-};
+app.id = package_json.alexa.applicationId;
 
 app.launch(function(request, response) {
   response.say("You can ask if you are on call, what schedule you are on call for, or when " +
@@ -161,7 +164,7 @@ app.intent('IsOnCallIntent', {
     "am I on call right now",
   ]
 }, function(request, response) {
-  getSchedules(function(data) {
+  return getSchedules().then(function(data) {
     if (data.activeSchedules.length == 0) {
       response.say("No. You will be on call for "+humanizeSchedules(data.nextSchedules)+
                    " starting "+humanizeTime(data.nextSchedules[0].DTSTART, data.timezone, data.now)+".");
@@ -173,9 +176,6 @@ app.intent('IsOnCallIntent', {
     response.say("Sorry, I'm having trouble getting the pager duty schedule.");
     response.send();
   });
-
-  // Return false immediately so alexa-app doesn't send the response
-  return false;
 });
 
 app.intent('ActiveSchedulesIntent', {
@@ -187,7 +187,7 @@ app.intent('ActiveSchedulesIntent', {
     "when is my {|current }on call {|rotation |schedule |policy }over",
   ]
 }, function(request, response) {
-  getSchedules(function(data) {
+  return getSchedules().then(function(data) {
     if (data.activeSchedules.length == 0) {
       response.say("You are not currently on call. You will be on call for "+humanizeSchedules(data.nextSchedules)+
                    " starting "+humanizeTime(data.nextSchedules[0].DTSTART, data.timezone, data.now)+".");
@@ -199,9 +199,6 @@ app.intent('ActiveSchedulesIntent', {
     response.say("Sorry, I'm having trouble getting the pager duty schedule.");
     response.send();
   });
-
-  // Return false immediately so alexa-app doesn't send the response
-  return false;
 });
 
 app.intent('NextSchedulesIntent', {
@@ -214,7 +211,7 @@ app.intent('NextSchedulesIntent', {
     "when am I on call next",
   ]
 }, function(request, response) {
-  getSchedules(function(data) {
+  return getSchedules().then(function(data) {
     if (data.nextSchedules.length == 0) {
       response.say("You are not scheduled for any upcoming on call.");
     } else {
@@ -226,9 +223,6 @@ app.intent('NextSchedulesIntent', {
     response.say("Sorry, I'm having trouble getting the pager duty schedule.");
     response.send();
   });
-
-  // Return false immediately so alexa-app doesn't send the response
-  return false;
 });
 
 module.exports = app;

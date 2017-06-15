@@ -9,9 +9,10 @@
     "url": "https://yourorg.pagerduty.com/private/secretid/feed"
   },
   "dependencies": {
-    "alexa-app": "^2.3.4",
+    "alexa-app": "^4.0.1",
     "moment": "^2.15.1",
     "moment-timezone": "^0.5.7",
-    "humanize-list": "^1.0.1"
+    "humanize-list": "^1.0.1",
+    "q": "1.0.1"
   }
 }
