@@ -151,6 +151,13 @@ var humanizeTime = function(time, timezone, now) {
 var app = new alexa.app('pagerduty');
 app.id = package_json.alexa.applicationId;
 
+app.pre = function(request,response,type) {
+  if (process.env.NODE_ENV == 'production' && request.applicationId != package_json.alexa.applicationId) {
+    // Fail ungracefully
+    response.fail("Invalid applicationId");
+  }
+};
+
 app.launch(function(request, response) {
   response.say("You can ask if you are on call, what schedule you are on call for, or when " +
                "your current on call ends. You can also ask when your next on call starts.");
