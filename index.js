@@ -12,18 +12,22 @@ var getSchedules = function() {
   var deferred = Q.defer();
 
   getCalendarFeed().then(function(data) {
-    var timezone = parseCalendarFeedTimezone(data);
-    var events = parseCalendarFeedEvents(data);
-    var now = moment();
-    var activeSchedules = getActiveSchedules(events, now);
-    var nextSchedules = getNextSchedules(events, now);
+    try {
+      var timezone = parseCalendarFeedTimezone(data);
+      var events = parseCalendarFeedEvents(data);
+      var now = moment();
+      var activeSchedules = getActiveSchedules(events, now);
+      var nextSchedules = getNextSchedules(events, now);
 
-    deferred.resolve({
-      timezone: timezone,
-      now: now,
-      activeSchedules: activeSchedules,
-      nextSchedules: nextSchedules
-    });
+      deferred.resolve({
+        timezone: timezone,
+        now: now,
+        activeSchedules: activeSchedules,
+        nextSchedules: nextSchedules
+      });
+    } catch (err) {
+      deferred.reject(err);
+    }
   }, deferred.reject);
 
   return deferred.promise;
